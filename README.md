@@ -1,29 +1,29 @@
-# promise-parallel
+# promise-threshold
 
-`promise-parallel` supplies more faster way to execute a lot of concurrency tasks than `Promise.all()`.
+`promise-threshold` supplies more faster way to execute a lot of concurrency tasks than `Promise.all()`.
 
 ## Installation
 
 ```shell
-$ npm install promise-parallel
+$ npm install promise-threshold
 ```
 
 ## Usage
 
 ```js
-const parallel = require('promise-parallel');
+const threshold = require('promise-threshold');
 
 const tasks = [
   ... task list which you need
 ];
-const threshold = 10; // This means executed per 10 task
+const concurrency = 10; // This means executed per 10 task
 const generator = (task) => {
   return new Promise((resolve) => {
     // some async task
   });
 };
 
-parallel(tasks, threshold, generator)
+threshold(tasks, concurrency, generator)
   .then(resuls => {
     console.log(results); // ordered results properly
   })
@@ -33,8 +33,8 @@ parallel(tasks, threshold, generator)
 ## Benchmark
 
 ```shell
-$ git clone https://github.com/ysugimoto/promise-parallel.git
-$ cd promise-parallel
+$ git clone https://github.com/ysugimoto/promise-threshold.git
+$ cd promise-threshold
 $ npm install
 $ npm run bench
 ```

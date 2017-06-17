@@ -1,7 +1,7 @@
 {
-  "name": "promise-parallel",
+  "name": "promise-threshold",
   "version": "1.0.0",
-  "description": "Execute Promise process by threshold you defined Edit",
+  "description": "Execute Promise process by threshold you defined",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ysugimoto/promise-parallel.git"
+    "url": "git+https://github.com/ysugimoto/promise-threshold.git"
   },
   "keywords": [
     "nodejs",
@@ -21,9 +21,9 @@
   "author": "Yoshiaki Sugimoto",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ysugimoto/promise-parallel/issues"
+    "url": "https://github.com/ysugimoto/promise-threshold/issues"
   },
-  "homepage": "https://github.com/ysugimoto/promise-parallel#readme",
+  "homepage": "https://github.com/ysugimoto/promise-threshold#readme",
   "devDependencies": {
     "benchmark": "^2.1.4",
     "chai": "^4.0.2",
