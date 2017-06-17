@@ -30,13 +30,17 @@ threshold(tasks, concurrency, generator)
 ;
 ```
 
-## Benchmark
+## Benchmark example
 
 ```shell
 $ git clone https://github.com/ysugimoto/promise-threshold.git
 $ cd promise-threshold
 $ npm install
 $ npm run bench
+
+Benchmark for 100 tasks by 10 threshold
+promise-threshold x 1.98 ops/sec ±0.23% (14 runs sampled)
+Promise.all x 0.22 ops/sec ±0.15% (6 runs sampled)
 ```
 
 ## Licence
