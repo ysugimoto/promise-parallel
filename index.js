@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Parallel promise function
+ * Threshold promise function
  *
  * @param {Array} tasks - Task list
  * @param {Number} concurrency - Threshold
@@ -10,7 +10,7 @@
  */
 module.exports = (tasks, concurrency, generator) => {
   concurrency = concurrency || tasks.length;
-  const parallels = [];
+  const thresholds = [];
   const resolves = [];
 
   let concurrentOffset = 0;
@@ -21,14 +21,14 @@ module.exports = (tasks, concurrency, generator) => {
         task = generator ? generator(task) : task;
         task = task instanceof Promise ?  task : Promise.resolve(task);
 
-        if (!parallels[index]) {
-          parallels[index] = task.then(result => {
+        if (!thresholds[index]) {
+          thresholds[index] = task.then(result => {
             resolves[index + offset] = result;
             return Promise.resolve();
           });
           return;
         }
-        parallels[index] = parallels[index].then(() => {
+        thresholds[index] = thresholds[index].then(() => {
           return task.then(result => {
             resolves[index + offset] = result;
             return Promise.resolve();
@@ -41,5 +41,5 @@ module.exports = (tasks, concurrency, generator) => {
     /* eslint-enable no-loop-func */
   } while (tasks.length > 0);
 
-  return Promise.all(parallels).then(() => resolves);
+  return Promise.all(thresholds).then(() => resolves);
 };

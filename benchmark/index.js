@@ -2,7 +2,7 @@
 
 const Benchmark = require('benchmark');
 const suite = new Benchmark.Suite();
-const parallel = require('../index.js');
+const threshold = require('../index.js');
 
 const generator = (index) => {
   return new Promise(resolve => {
@@ -13,11 +13,11 @@ const generator = (index) => {
 console.log('Benchmark for 100 tasks by 10 threshold');
 
 suite
-.add('promise-parallel', {
+.add('promise-threshold', {
   defer: true,
   fn: deferred => {
     const tasks = Array.from(new Array(100), (_, index) => index);
-    return parallel(tasks, 10, generator)
+    return threshold(tasks, 10, generator)
       .then(result => deferred.resolve())
     ;
   }
