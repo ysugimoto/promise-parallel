@@ -1,5 +1,7 @@
 # promise-threshold
 
+[![Build Status](https://travis-ci.org/ysugimoto/promise-threshold.svg?branch=master)](https://travis-ci.org/ysugimoto/promise-threshold)
+
 `promise-threshold` supplies more faster way to execute a lot of concurrency tasks than `Promise.all()`.
 
 ## Installation
