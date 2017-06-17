@@ -1,0 +1,33 @@
+{
+  "name": "promise-parallel",
+  "version": "1.0.0",
+  "description": "Execute Promise process by threshold you defined Edit",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/_mocha --timeout 10000 test",
+    "bench": "node ./benchmark/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ysugimoto/promise-parallel.git"
+  },
+  "keywords": [
+    "nodejs",
+    "promise"
+  ],
+  "author": "Yoshiaki Sugimoto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ysugimoto/promise-parallel/issues"
+  },
+  "homepage": "https://github.com/ysugimoto/promise-parallel#readme",
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "chai": "^4.0.2",
+    "microtime": "^2.1.5",
+    "mocha": "^3.4.2"
+  }
+}
